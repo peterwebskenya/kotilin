@@ -8,12 +8,12 @@ fun main(args: Array<String>) {
     for (x in 1..100) {
         if (x % 3 == 0 && x % 5 == 0) {
 
-            print("fizzbuzz")
+            println("$x is fizzbuzz")
         } else if (x % 3 == 0 && x % 5 != 0) {
 
-            print("fizz")
+            println("$x is fizz")
         } else if (x % 5 == 0 && x % 3 != 0)
-            print("Buzz")
+            println("$x is Buzz")
     else
         println(x)
     }
