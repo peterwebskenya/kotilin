@@ -1,34 +1,36 @@
-  fun main(args: Array<Int>) {
+package kotlinchallenge
 
+fun main(args: Array<String>) {
+    println("enter first number:")
+    var num1 = readLine()!!.toDouble()
 
+    println("enter the second number:")
+    var num2 = readLine()!!.toDouble()
 
-          val reader = scanner(System.`in`)
-          print("Enter two numbers: ")
+    println("enter the operator (+,-,*,/):")
+    var operator = readLine()
 
-          // nextDouble() reads the next double from the keyboard
-          val first = reader.nextDouble()
-          val second = reader.nextDouble()
+    if ( num1 ==null || num2 == null || operator == null){
+        println("error")
+        return
+    }
+    var result = when (operator){
+        "+" -> num1 + num2
+        "-" -> num1 - num2
+        "*" -> num1 * num2
+        "/" ->{
+            if(num2 !=0.0){num1/num2
+            }else{
+                println("division by zero is not allowed")
+                return
+            }
+        }
+        else ->{
+            println("invalid operator")
+            return
+        }
 
-          print("Enter an operator (+, -, *, /): ")
-          val operator = reader.next()[0]
+    }
+    println("results: $result")
 
-          val result: Double
-
-          when (operator) {
-              '+' -> result = first + second
-              '-' -> result = first - second
-              '*' -> result = first * second
-              '/' -> result = first / second
-              // operator doesn't match any case constant (+, -, *, /)
-              else -> {
-                  System.out.printf("Error! operator is not correct")
-                  return
-              }
-          }
-
-          System.out.printf("%.1f %c %.1f = %.1f", first, operator, second, result)
-
-
-      }
-
-
+}
